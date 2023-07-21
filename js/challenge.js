@@ -26,7 +26,6 @@ function changeWithButtons() {
     minus.addEventListener("click", () => changeCounter("remove"))
 }
 
-
 // "Like" an individual number of the counter
 likeButton.addEventListener("click", addOrUpdateLikes)
 
@@ -77,3 +76,20 @@ function pauseCounter() {
         }
     })
 }
+
+// add comments
+const submitButton = document.getElementById('submit')
+submitButton.addEventListener("click", (e) => {
+    e.preventDefault()
+    addComment()
+})
+
+function addComment() {
+    const commentList = document.getElementById('list')
+    const submittedComment = document.getElementById('comment-input').value
+    const newComment = document.createElement('li')
+    newComment.innerText = submittedComment
+    commentList.appendChild(newComment)
+    const commentForm = document.getElementById('comment-form')
+    commentForm.reset()
+}    
